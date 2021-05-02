@@ -69,7 +69,7 @@ data "terraform_remote_state" "s3" {
   backend = "s3"
   config = {
     bucket = var.remote_state_s3_bucket_name
-    key    = "${var.remote_state_s3_key_prefix}/${each.key}/terraform.tfstate"
+    key    = "${each.key}/terraform.tfstate"
     region = var.remote_state_s3_bucket_region
   }
 }
